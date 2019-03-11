@@ -1,0 +1,9 @@
+#SetEnv APPLICATION_ENV development
+
+RewriteEngine On
+
+#RewriteRule ^([^.]+)/Impressum.html$ /pizza/shops/index.php?shopname=$1&task=category&request=list&special=2&catid=-1 [L]
+#RewriteRule ^([^.]+)/([^.]+)\.html$ /pizza/shops/index.php?shopname=$1&task=category&request=list&special=2&%{QUERY_STRING} [L]
+#RewriteRule ^([^.]+)/feedback /pizza/shops/index.php?shopname=$1&task=feedback&request=list&special=2&%{QUERY_STRING} [L]
+#RewriteRule ^([^.]+)/([^.]+) /pizza/shops/index.php?shopname=$1&task=$2&request=list&special=2&%{QUERY_STRING} [L]
+#RewriteRule ^([^.]+) /pizza/shops/index.php?shopname=$1&%{QUERY_STRING} [L]
