@@ -1,0 +1,19 @@
+#SetEnv APPLICATION_ENV development
+
+RewriteEngine on
+
+RewriteRule ^([^.]+)/Impressum.html$ /home2/superwf1/public_html/pizza/shops/index.php?shopname=$1&task=category&request=list&special=2&catid=-1 [L]
+RewriteRule ^(.+)/(.+)\.html$ /home2/superwf1/public_html/pizza/shops/index.php?shopname=$1&task=category&request=list&special=2&%{QUERY_STRING} [L]
+RewriteRule ^([^.]+)/feedback /home2/superwf1/public_html/pizza/shops/index.php?shopname=$1&task=feedback&request=list&special=2&%{QUERY_STRING} [L]
+
+RewriteCond $1 !^(admin|ajax|portal|login|signup|index\.php|css|js|images|upload|shops|robots\.txt)
+RewriteRule ^([^.]+)/([^.]+) /home2/superwf1/public_html/pizza/shops/index.php?shopname=$1&task=$2&request=list&special=2&%{QUERY_STRING} [L]
+
+RewriteCond $1 !^(admin|ajax|portal|login|signup|index\.php|css|js|images|upload|shops|robots\.txt)
+RewriteRule ^(.*)$ /home2/superwf1/public_html/pizza/shops/index.php?shopname=$1&%{QUERY_STRING} [L]
+
+RewriteCond $1 !^$ 
+RewriteCond $1 !^(index\.php|css|js|images|upload|shops|robots\.txt)
+RewriteRule ^(.*)$ /home2/superwf1/public_html/pizza/index.php/$1 [L]
+
+
