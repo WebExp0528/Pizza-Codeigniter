@@ -6,6 +6,7 @@ class Admin extends CI_Controller
 {
 	public function index()
 	{
+		$this->load->model('user');
 		
 		$user_id = $this->input->post('user_id', true);
 		$user_pass = $this->input->post('user_pass', true);
